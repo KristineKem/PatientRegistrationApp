@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "mxI/TnrmRDlKVLqN5s2VNHcxm4JVvWSARLpuj0sCF/M=",
+  "Source": "PatientRegistrationApp",
+  "BasePath": "_content/PatientRegistrationApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

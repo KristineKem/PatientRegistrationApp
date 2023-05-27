@@ -1,0 +1,17 @@
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\bin\Debug\net6.0\PatientRegistrationApp.Data.deps.json
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\bin\Debug\net6.0\PatientRegistrationApp.Data.runtimeconfig.json
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\bin\Debug\net6.0\PatientRegistrationApp.Data.dll
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\bin\Debug\net6.0\PatientRegistrationApp.Data.pdb
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\bin\Debug\net6.0\PatientRegistrationApp.Core.dll
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\bin\Debug\net6.0\PatientRegistrationApp.Core.pdb
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\PatientRegistrationApp.Data.csproj.AssemblyReference.cache
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\PatientRegistrationApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\PatientRegistrationApp.Data.AssemblyInfoInputs.cache
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\PatientRegistrationApp.Data.AssemblyInfo.cs
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\PatientRegistrationApp.Data.csproj.CoreCompileInputs.cache
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\PatientRegistrationApp.Data.csproj.CopyComplete
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\PatientRegistrationApp.Data.dll
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\refint\PatientRegistrationApp.Data.dll
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\PatientRegistrationApp.Data.pdb
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\PatientRegistrationApp.Data.genruntimeconfig.cache
+C:\Users\krist\Coding\CODELEX\VS_repos\PatientRegistrationApp\PatientRegistrationApp.Data\obj\Debug\net6.0\ref\PatientRegistrationApp.Data.dll
