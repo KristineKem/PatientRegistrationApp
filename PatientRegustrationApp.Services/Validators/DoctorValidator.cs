@@ -7,7 +7,7 @@ namespace PatientRegistrationApp.Services.Validators
     {
         public bool IsValid(Patient patient)
         {
-            return patient?.PatientDoctor != null;
+            return !string.IsNullOrEmpty(patient?.Doctor);
         }
     }
 }

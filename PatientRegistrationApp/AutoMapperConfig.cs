@@ -11,7 +11,7 @@ namespace PatientRegistrationApp
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<PatientSearchForm, Patient>()
-                    .ForMember(m => m.PatientDoctor, 
+                    .ForMember(m => m.Doctor, 
                         opt => opt.Ignore());
                 cfg.CreateMap<Patient, PatientSearchForm>();
 

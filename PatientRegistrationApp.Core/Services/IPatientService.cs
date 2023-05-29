@@ -4,8 +4,8 @@ namespace PatientRegistrationApp.Core.Services
 {
     public interface IPatientService : ICommonService<Patient>
     {
-        public List<Patient> GetByDoctorName(string doctorName);
-        public List<Patient> GetByDoctorCode(int doctorCode);
+        Patient GetByCode(string code);
+        List<Patient> GetPatientsByDoctor(string doctor);
         bool DoesPatientAlreadyExist(Patient patient);
     }
 }

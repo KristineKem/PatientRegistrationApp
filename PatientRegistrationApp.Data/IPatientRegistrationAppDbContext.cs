@@ -8,8 +8,6 @@ namespace PatientRegistrationApp.Data
     {
         public DbSet<Patient> Patients { get; set; }
 
-        public DbSet<Doctor> Doctors { get; set; }
-
         DbSet<T> Set<T>() where T : class;
 
         EntityEntry<T> Entry<T>(T entity) where T : class;

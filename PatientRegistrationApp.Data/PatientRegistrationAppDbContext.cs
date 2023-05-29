@@ -7,6 +7,5 @@ namespace PatientRegistrationApp.Data
     {
         public PatientRegistrationAppDbContext(DbContextOptions options) : base(options) { }
         public DbSet<Patient> Patients { get; set; }
-        public DbSet<Doctor> Doctors { get; set; }
     }
 }

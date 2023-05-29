@@ -10,14 +10,14 @@ namespace PatientRegistrationApp.Services
         {
         }
 
-        public List<Patient> GetByDoctorName(string doctorName)
+        public Patient GetByCode(string code)
         {
-            return _context.Patients.Where(p => p.PatientDoctor.Name == doctorName).ToList();
+            return _context.Patients.SingleOrDefault(p => p.Code == code);
         }
 
-        public List<Patient> GetByDoctorCode(int doctorCode)
+        public List<Patient> GetPatientsByDoctor(string doctor)
         {
-            return _context.Patients.Where(p => p.PatientDoctor.Code == doctorCode).ToList();
+            return _context.Patients.Where(p => p.Doctor == doctor).ToList();
         }
 
         public bool DoesPatientAlreadyExist(Patient patient)
@@ -26,10 +26,7 @@ namespace PatientRegistrationApp.Services
                                               && p.Code == patient.Code
                                               && p.Town == patient.Town
                                               && p.Sex == patient.Sex
-                                              && p.PatientDoctor.Name == patient.PatientDoctor.Name
-                                              && p.PatientDoctor.Town == patient.PatientDoctor.Town
-                                              && p.PatientDoctor.Code == patient.PatientDoctor.Code
-                                              && p.PatientDoctor.Profile == patient.PatientDoctor.Profile);
+                                              && p.Doctor == patient.Doctor);
         }
     }
 }

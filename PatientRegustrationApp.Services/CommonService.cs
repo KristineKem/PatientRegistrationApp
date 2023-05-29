@@ -14,11 +14,6 @@ namespace PatientRegistrationApp.Services
             _context = context;
         }
 
-        public T? GetByCode<T>(int code) where T : Common
-        {
-            return _context.Set<T>().SingleOrDefault(p => p.Code == code);
-        }
-        
         public void Add(T entity)
         {
             _context.Set<T>().Add(entity);

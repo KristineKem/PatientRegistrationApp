@@ -28,7 +28,7 @@ namespace PatientRegistrationApp.Controllers
             _mapper = mapper;
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("newPatient")]
         public IActionResult AddPatient(Patient patient)
         {
@@ -49,9 +49,9 @@ namespace PatientRegistrationApp.Controllers
 
         [HttpDelete]
         [Route("deletePatient/{code}")]
-        public IActionResult DeletePatient(int code)
+        public IActionResult DeletePatient(string code)
         {
-            var findPatient = _patientService.GetByCode<Patient>(code);
+            var findPatient = _patientService.GetByCode(code);
 
             if (findPatient == null)
                 return NotFound();
@@ -62,12 +62,12 @@ namespace PatientRegistrationApp.Controllers
         }
 
         [HttpGet]
-        [Route("getPatientsByName/{name}")]
-        public IActionResult GetPatientsByDoctorName(string name)
+        [Route("getPatientsByDoctor/{doctor}")]
+        public IActionResult GetPatientsByDoctorCode(string doctor)
         {
-            var patients = _patientService.GetByDoctorName(name);
+            var patients = _patientService.GetPatientsByDoctor(doctor);
 
-            if(patients == null)
+            if (patients == null)
                 return NotFound();
 
             var mappedPatients = _mapper.Map<PatientSearchForm[]>(patients);
@@ -76,15 +76,15 @@ namespace PatientRegistrationApp.Controllers
         }
 
         [HttpGet]
-        [Route("getPatientsByCode/{code}")]
-        public IActionResult GetPatientsByDoctorCode(int code)
+        [Route("getAll")]
+        public IActionResult GetAllPatients()
         {
-            var patients = _patientService.GetByDoctorCode(code);
+            var allPatients = _patientService.GetAll();
 
-            if (patients == null)
+            if(allPatients == null)
                 return NotFound();
 
-            var mappedPatients = _mapper.Map<PatientSearchForm[]>(patients);
+            var mappedPatients = _mapper.Map<Patient[]>(allPatients);
 
             return Ok(mappedPatients);
         }
