@@ -23,19 +23,9 @@ export class DoctorPatientsButtonComponent {
   showFilter: boolean = false;
   showDocButton: boolean = true;
   showFilteredTable: boolean = false;
+  showBasicTable: boolean = true;
   patientsList: PatientList[] = [];
-  _filterText: string = '';
   filteredList: PatientList[] = [];
-
-  get filterText(){
-    return this._filterText;
-  }
-
-  set filterText(value: string){
-    this._filterText = value;
-    this.filteredList = this.filterData(value);
-    this.showFilteredTable = true;
-  }
 
   constructor(private patientService: PatientService) {}
 
@@ -46,10 +36,22 @@ export class DoctorPatientsButtonComponent {
   onDoctorClick()
   {
     this.showDocButton = false;
-    this.showFilter = !this.showFilter;
+    this.showFilter = true;
     this.patientService.getAllPatients().subscribe(data => {
       this.patientsList = data;
     });
+  }
+
+  onKey(value: string){
+    let searchText = value.toLowerCase();
+    if(value === "") {
+      return this.patientsList;
+    } else {
+      return this.patientsList.filter(patient => patient.doctor.toLowerCase().includes(searchText));
+    }
+
+    
+
   }
 
   filterData(inputText: string) {
@@ -57,7 +59,7 @@ export class DoctorPatientsButtonComponent {
     if (inputText === '') {
       return this.patientsList;
     } else {
-      return this.patientsList.filter(patient => patient.doctor.toLowerCase().includes(searchText.toString().toLowerCase()));
+      return this.patientsList.filter(patient => patient.doctor.toLowerCase().includes(searchText.toLowerCase()));
     }
   }
 }

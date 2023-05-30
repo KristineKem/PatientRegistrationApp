@@ -5,7 +5,7 @@ import { PatientService } from 'src/app/patient-service.service';
 export interface PatientList {
     id: number,
     name: string,
-    code: string,
+    code: number,
     town: string,
     sex: string,
     doctor: string
@@ -23,26 +23,24 @@ export class AllPatientsButtonComponent {
   showTable: boolean = false;
   showAllButton: boolean = true;
   patientsList: PatientList[] = [];
+  updatedPatientList: PatientList[] = [];
 
   constructor(private patientService: PatientService) {  }
 
-  onClick(): void {
-    this.showTable = !this.showTable;
+  onClick() {
+    this.showTable = true;;
     this.showAllButton = false;
-    this.patientService.getAllPatients().subscribe((data: PatientList[]) => {
+    this.patientService.getAllPatients().subscribe((data: any) => {
       this.patientsList = data;
-    },
-    error => {
-      console.log(error);
-    }
-    )
+    })
   }
 
-  onDelete(code:string) {
-    this.patientService.deletePatient(code).subscribe(() => 
-      this.onClick);
+  onDelete(code:number) {
+    this.patientService.deletePatient(code).subscribe((res) => {
+      console.log(res);
+      this.onClick();
+    });
   }
-
 }
 
 

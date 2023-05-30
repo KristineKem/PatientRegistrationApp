@@ -3,6 +3,14 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PatientService } from 'src/app/patient-service.service';
 
+export interface Patient {
+  pName: string,
+  code: string,
+  town: string,
+  sex: string,
+  doctor: string
+}
+
 @Component({
   selector: 'app-add-patient-button',
   templateUrl: './add-patient-button.component.html',
@@ -13,9 +21,8 @@ export class AddPatientButtonComponent {
   buttonText = "Add new patient";
   showForm: boolean = false;
   showAlert: boolean = false;
-  closeResult = '';
-
-  constructor(private modalService: NgbModal, private patientService: PatientService) {}
+  showSave: boolean = true;
+  showCancel: boolean = true;
 
   addPatient = new FormGroup({
     name: new FormControl(''),
@@ -25,23 +32,28 @@ export class AddPatientButtonComponent {
     doctor: new FormControl('')
   });
 
-   open(content:any) {
+  constructor(private modalService: NgbModal, private patientService: PatientService) {}
+
+  open(content:any) {
       this.showForm = true;
-      this.modalService.open(content        
-      );
+      this.modalService.open(content);
+      this.showSave = true;
+      this.showCancel = true;
+      this.showAlert = false;
     }
 
-    onSave(){
+  onSave(){
       this.patientService.addPatient(this.addPatient.getRawValue()).subscribe((res: {}) =>{
-        console.log(JSON.stringify(this.addPatient.value));
         JSON.stringify(this.addPatient.value);
       },
       error => {alert('Something went wrong. Please, try again.')});
       this.showAlert = true;
+      this.showSave = false;
+      this.showCancel = false;
       this.addPatient.reset({});
     }
     
-    onAlertClose(){
+  onAlertClose(){
       this.showAlert = false;
     }
   }

@@ -6,8 +6,6 @@ namespace PatientRegistrationApp.Core.Services
     {
         public void Add(T entity);
 
-        public void Update(T entity);
-
         public void Delete(T entity);
 
         public List<T> GetAll();

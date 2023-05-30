@@ -11,43 +11,43 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Full Name</span>
               </div>
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="name">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Personal Code</span>
               </div>
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="code">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Town</span>
               </div>
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="town">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Gender</span>
               </div>
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="sex">
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Doctor Name</span>
               </div>
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" formControlName="doctor">
             </div>            
           </form>
 			</div>
 		</form>
 	</div>
 	<div class="modal-footer">
-    <div *ngIf="showAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <div *ngIf="showAlert" class="alert alert-success alert-dismissible fade show justify-content-center" role="alert">
       <strong>Done!</strong> New patient added sucessfully.
-      <button (click)="onAlertClose()" type="button" data-bs-dismiss="alert" aria-label="Close">Close</button>
+      <button class="btn-close" (click)="modal.close()" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-		<button type="button" class="btn btn-outline-dark" (click)="onSave()">Save</button>
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Cancel</button>
+		<button *ngIf="showSave" type="button" class="btn btn-outline-dark" (click)="onSave()">Save</button>
+    <button *ngIf="showCancel" type="button" class="btn btn-outline-dark" (click)="modal.close()">Cancel</button>
 	</div>
 </ng-template>
 <div class="position-relative">

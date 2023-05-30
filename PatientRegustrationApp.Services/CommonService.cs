@@ -20,12 +20,6 @@ namespace PatientRegistrationApp.Services
             _context.SaveChanges();
         }
 
-        public void Update(T entity)
-        {
-            _context.Entry(entity).State = EntityState.Modified;
-            _context.SaveChanges();
-        }
-
         public void Delete(T entity)
         {
             _context.Set<T>().Remove(entity);

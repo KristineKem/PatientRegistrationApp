@@ -32,10 +32,6 @@ export class PatientService {
     return this.http.delete(this.apiUrl + '/deletePatient/' + code);
   }
 
-  getByName(name: any): Observable<any[]>{
-    return this.http.get<any>(this.apiUrl + '/getPatientsByName/' + name);
-  }
-
   getByCode(code: any): Observable<any[]>{
     return this.http.get<any>(this.apiUrl + '/getPatientsByCode/' + code);
   }

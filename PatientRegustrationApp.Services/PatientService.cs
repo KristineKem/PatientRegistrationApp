@@ -12,7 +12,7 @@ namespace PatientRegistrationApp.Services
 
         public Patient GetByCode(string code)
         {
-            return _context.Patients.SingleOrDefault(p => p.Code == code);
+            return _context.Patients.FirstOrDefault(p => p.Code == code);
         }
 
         public List<Patient> GetPatientsByDoctor(string doctor)

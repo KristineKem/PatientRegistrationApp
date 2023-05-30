@@ -7,19 +7,19 @@
     <div class="mt-3 position-relative">
       <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Enter doctors name:</label>
       <div class="col-xs-3 col-sm-auto">
-        <input id="table-filtering-search" class="form-control" type="text" [(ngModel)]="filterText" name="input"/>
+        <input id="table-filtering-search" class="form-control" type="text" #searchInput (keyup)="onKey(searchInput.value)"/>
       </div>
     </div> 
   </form>
   
-  <table class="table table-striped">
+  <table class="table table-striped" *ngIf="showBasicTable">
     <thead>
       <tr>
         <th scope="col">#</th>
 			  <th scope="col">Patient Name</th>
 			  <th scope="col">Patient Code</th>
 			  <th scope="col">Patient Towm</th>
-        <th scope="col">Patient Sex</th>
+        <th scope="col">Patient Gender</th>
         <th scope="col">Doctor Name</th>
       </tr>
     </thead>
@@ -44,7 +44,7 @@
 			  <th scope="col">Patient Name</th>
 			  <th scope="col">Patient Code</th>
 			  <th scope="col">Patient Towm</th>
-        <th scope="col">Patient Sex</th>
+        <th scope="col">Patient Gender</th>
       </tr>
     </thead>
     <tbody>
