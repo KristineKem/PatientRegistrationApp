@@ -1,12 +1,12 @@
 <ng-template #content let-modal>
 	<div class="modal-header">
 		<h4 class="modal-title" id="modal-basic-title">Add new patient</h4>
-		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss()"></button>
 	</div>
 	<div class="modal-body">
 		<form>
 			<div class="mb-3">
-					<form [formGroup]="addPatient" *ngIf="showForm" #myForm="ngForm">
+					<form [formGroup]="addPatient" *ngIf="showForm" #myForm="ngForm" name="addForm">
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Full Name</span>
@@ -15,7 +15,7 @@
             </div>
             <div class="input-group input-group-sm mb-3">
               <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Peronal Code</span>
+                <span class="input-group-text" id="inputGroup-sizing-sm">Personal Code</span>
               </div>
               <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
             </div>
@@ -36,31 +36,17 @@
                 <span class="input-group-text" id="inputGroup-sizing-sm">Doctor Name</span>
               </div>
               <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-            </div>
-            <div class="input-group input-group-sm mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Doctor Code</span>
-              </div>
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-            </div>
-            <div class="input-group input-group-sm mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Doctor Profile</span>
-              </div>
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-            </div>
-            <div class="input-group input-group-sm mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroup-sizing-sm">Doctor Town</span>
-              </div>
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-            </div>	
+            </div>            
           </form>
 			</div>
 		</form>
 	</div>
 	<div class="modal-footer">
-		<button type="button" class="btn btn-outline-dark" (click)="modal.close()" (submit)="onSave()">Save</button>
+    <div *ngIf="showAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Done!</strong> New patient added sucessfully.
+      <button (click)="onAlertClose()" type="button" data-bs-dismiss="alert" aria-label="Close">Close</button>
+    </div>
+		<button type="button" class="btn btn-outline-dark" (click)="onSave()">Save</button>
     <button type="button" class="btn btn-outline-dark" (click)="modal.close()">Cancel</button>
 	</div>
 </ng-template>

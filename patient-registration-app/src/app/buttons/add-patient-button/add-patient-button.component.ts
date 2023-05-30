@@ -12,6 +12,7 @@ export class AddPatientButtonComponent {
 
   buttonText = "Add new patient";
   showForm: boolean = false;
+  showAlert: boolean = false;
   closeResult = '';
 
   constructor(private modalService: NgbModal, private patientService: PatientService) {}
@@ -21,38 +22,27 @@ export class AddPatientButtonComponent {
     code: new FormControl(''),
     town: new FormControl(''),
     sex: new FormControl(''),
-    dName: new FormControl(''),
-    dCode: new FormControl(''),
-    profile: new FormControl(''),
-    dTown: new FormControl('')
+    doctor: new FormControl('')
   });
 
    open(content:any) {
       this.showForm = true;
-      this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
-        (result) => {
-          this.closeResult = `Closed with: ${result}`;
-        },
-        (reason) => {
-          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-        },
+      this.modalService.open(content        
       );
     }
 
-  private getDismissReason(reason: any): string {
-      if (reason === ModalDismissReasons.ESC) {
-        return 'by pressing ESC';
-      } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-        return 'by clicking on a backdrop';
-      } else {
-        return `with: ${reason}`;
-      }
-    }
-
     onSave(){
-      this.patientService.addPatient(this.addPatient).subscribe(res =>{
-        alert(res.toString());
-      })
-    }    
+      this.patientService.addPatient(this.addPatient.getRawValue()).subscribe((res: {}) =>{
+        console.log(JSON.stringify(this.addPatient.value));
+        JSON.stringify(this.addPatient.value);
+      },
+      error => {alert('Something went wrong. Please, try again.')});
+      this.showAlert = true;
+      this.addPatient.reset({});
+    }
+    
+    onAlertClose(){
+      this.showAlert = false;
+    }
   }
 

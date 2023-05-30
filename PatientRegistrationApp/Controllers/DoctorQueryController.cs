@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PatientRegistrationApp.Core.Models;
 using PatientRegistrationApp.Core.Services;
@@ -10,7 +9,6 @@ namespace PatientRegistrationApp.Controllers
 {
     [Route("admin-api")]
     [ApiController]
-    [Authorize]
     public class DoctorQueryController : ControllerBase
     {
         private static readonly object lockObject = new object();

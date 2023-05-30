@@ -9,7 +9,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PatientService {
-  readonly apiUrl = "http://localhost:5030";
+  readonly apiUrl = "http://localhost:5030/admin-api";
 
   httpOptions = {
     headers: new HttpHeaders({

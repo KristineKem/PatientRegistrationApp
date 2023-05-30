@@ -7,7 +7,7 @@
     <div class="mt-3 position-relative">
       <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Enter doctors name:</label>
       <div class="col-xs-3 col-sm-auto">
-        <input id="table-filtering-search" class="form-control" type="text" [(ngModel)]="searchText" />
+        <input id="table-filtering-search" class="form-control" type="text" [(ngModel)]="filterText" name="input"/>
       </div>
     </div> 
   </form>
@@ -31,6 +31,29 @@
         <td>{{patient.town}}</td>
         <td>{{patient.sex}}</td>
         <td>{{patient.doctor}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <table class="table table-striped" *ngIf="showFilteredTable">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+			  <th scope="col">Patient Name</th>
+			  <th scope="col">Patient Code</th>
+			  <th scope="col">Patient Towm</th>
+        <th scope="col">Patient Sex</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of patientsList">
+        <td>{{patient.id}}</td>
+        <td>{{patient.name}}</td>
+        <td>{{patient.code}}</td>
+        <td>{{patient.town}}</td>
+        <td>{{patient.sex}}</td>
       </tr>
     </tbody>
   </table>

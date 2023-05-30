@@ -10,20 +10,20 @@
 			<th scope="col">Patient Name</th>
 			<th scope="col">Patient Code</th>
 			<th scope="col">Patient Towm</th>
-      <th scope="col">Patient Sex</th>
-      <th scope="col">Doctor Name</th>
-      <th scope="col">Delete</th>
+			<th scope="col">Patient Sex</th>
+			<th scope="col">Doctor Name</th>
+			<th scope="col"></th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr *ngFor="let patient of patientsList">
 			<td>{{patient.id}}</td>
-      <td>{{patient.name}}</td>
-      <td>{{patient.code}}</td>
-      <td>{{patient.town}}</td>
-      <td>{{patient.sex}}</td>
-      <td>{{patient.doctor}}</td>      
-      <td> <button type="button" class="btn btn-danger" (clikc)="onDelete(patient.code)">Delete Patient</button> </td>
+			<td>{{patient.name}}</td>
+			<td>{{patient.code}}</td>
+			<td>{{patient.town}}</td>
+			<td>{{patient.sex}}</td>
+			<td>{{patient.doctor}}</td>      
+			<td> <button type="button" class="btn btn-outline-danger" (clikc)="onDelete(patient.code)">Delete</button> </td>
       <th></th>
 		</tr>
   </tbody>

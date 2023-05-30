@@ -6,6 +6,8 @@ div {
     margin: 50px 20px;
     color: black;
     font-size: 30px;
+    line-height: normal;
+    line-break: auto;
 }
 
 .choose {
