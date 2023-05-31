@@ -17,7 +17,7 @@ namespace PatientRegistrationApp.Services
 
         public List<Patient> GetPatientsByDoctor(string doctor)
         {
-            return _context.Patients.Where(p => p.Doctor == doctor).ToList();
+            return _context.Patients.Where(p => p.Doctor.ToLower() == doctor.ToLower()).ToList();
         }
 
         public bool DoesPatientAlreadyExist(Patient patient)

@@ -20,6 +20,7 @@ export interface PatientList {
 export class DoctorPatientsButtonComponent {
 
   buttonText = "Show all doctor patients";
+  inputText: string = "";
   showFilter: boolean = false;
   showDocButton: boolean = true;
   showFilteredTable: boolean = false;
@@ -42,24 +43,14 @@ export class DoctorPatientsButtonComponent {
     });
   }
 
-  onKey(value: string){
-    let searchText = value.toLowerCase();
-    if(value === "") {
-      return this.patientsList;
-    } else {
-      return this.patientsList.filter(patient => patient.doctor.toLowerCase().includes(searchText));
-    }
-
-    
-
-  }
-
-  filterData(inputText: string) {
-    let searchText = inputText.toLowerCase();
-    if (inputText === '') {
-      return this.patientsList;
-    } else {
-      return this.patientsList.filter(patient => patient.doctor.toLowerCase().includes(searchText.toLowerCase()));
-    }
+  filterTable(){
+    this.showBasicTable = false;    
+    this.patientService.getByDoctorName(this.inputText).subscribe(data => {
+      if(data.length > 0){
+        (error: any) => console.log(error);
+      } else {
+      this.filteredList = data;
+      this.showFilteredTable = true;
+  }});    
   }
 }
