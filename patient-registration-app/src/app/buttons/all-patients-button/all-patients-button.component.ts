@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {} from '@angular/forms';
 import { PatientService } from 'src/app/patient-service.service';
 
 export interface PatientList {
@@ -42,7 +41,3 @@ export class AllPatientsButtonComponent {
     });
   }
 }
-
-
-
-

@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { Component } from '@angular/core';
+import { Routes } from '@angular/router';
+
 
 import { AddPatientButtonComponent } from '../buttons/add-patient-button/add-patient-button.component';
 import { AllPatientsButtonComponent } from '../buttons/all-patients-button/all-patients-button.component';
@@ -18,12 +18,4 @@ const routes: Routes = [
   styleUrls: ['./actions.component.css']
 })
 
-export class ActionsComponent {
-
-  constructor() {}
-
-  ngOnInit(){
-
-  }
-
-}
+export class ActionsComponent {}

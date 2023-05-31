@@ -1,8 +1,6 @@
-import { NgForm } from '@angular/forms';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
-import { ActionsComponent } from './actions/actions.component';
 import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({

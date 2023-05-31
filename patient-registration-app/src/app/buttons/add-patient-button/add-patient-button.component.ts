@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PatientService } from 'src/app/patient-service.service';
 
 export interface Patient {
@@ -57,4 +57,3 @@ export class AddPatientButtonComponent {
       this.showAlert = false;
     }
   }
-

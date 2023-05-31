@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { PatientService } from 'src/app/patient-service.service';
-import { NgIf } from '@angular/common';
-import { debounceTime } from 'rxjs/operators';
-import { Subject } from 'rxjs';
-
-
 
 export interface PatientList {
   id: number,
@@ -21,6 +15,7 @@ export interface PatientList {
   templateUrl: './doctor-patients-button.component.html',
   styleUrls: ['./doctor-patients-button.component.css']
 })
+
 export class DoctorPatientsButtonComponent {
 
   buttonText = "Show all doctor patients";
@@ -53,7 +48,7 @@ export class DoctorPatientsButtonComponent {
           console.log(this.filteredList);
         } else {
           (error: any) =>  alert("Error: " + error);
-  }})}, 2000);
+    }})}, 2000);
     this.showBasicTable = false;
     this.showFilteredTable = true;
   }
