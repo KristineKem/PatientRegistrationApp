@@ -1,10 +1,14 @@
 div {
 
 .welcome {
+    background-color: #5f4bfa;
+    border-color: azure;
+    border-radius: 10px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     margin: 50px 20px;
-    color: black;
+    color: white !important;
     font-size: 30px;
     line-height: normal;
     line-break: auto;
@@ -13,7 +17,8 @@ div {
 .choose {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;;
+    margin-bottom: 30px;;
     font-size: 20px;
+    
 }
 }

@@ -1,3 +1,14 @@
 .tab {
     margin: 20px; 
 }
+
+.table {
+
+.table-head{
+    margin: 20px;  
+}
+
+.table-tr{
+    justify-content: center;
+}
+}

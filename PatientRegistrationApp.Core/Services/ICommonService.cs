@@ -1,6 +1,4 @@
-﻿using PatientRegistrationApp.Core.Models;
-
-namespace PatientRegistrationApp.Core.Services
+﻿namespace PatientRegistrationApp.Core.Services
 {
     public interface ICommonService<T> where T : class
     {

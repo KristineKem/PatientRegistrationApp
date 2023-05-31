@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { PatientService } from 'src/app/patient-service.service';
 import { NgIf } from '@angular/common';
+import { debounceTime } from 'rxjs/operators';
+import { Subject } from 'rxjs';
+
+
 
 export interface PatientList {
   id: number,
@@ -25,14 +29,11 @@ export class DoctorPatientsButtonComponent {
   showDocButton: boolean = true;
   showFilteredTable: boolean = false;
   showBasicTable: boolean = true;
+  timeout: any = null;
   patientsList: PatientList[] = [];
   filteredList: PatientList[] = [];
-
+  
   constructor(private patientService: PatientService) {}
-
-  ngOnInit(){
-    
-  }
 
   onDoctorClick()
   {
@@ -44,13 +45,16 @@ export class DoctorPatientsButtonComponent {
   }
 
   filterTable(){
-    this.showBasicTable = false;    
-    this.patientService.getByDoctorName(this.inputText).subscribe(data => {
-      if(data.length > 0){
-        (error: any) => console.log(error);
-      } else {
-      this.filteredList = data;
-      this.showFilteredTable = true;
-  }});    
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.patientService.getByDoctorName(this.inputText).subscribe(data => {
+        if(data.length > 0){
+          this.filteredList = data;
+          console.log(this.filteredList);
+        } else {
+          (error: any) =>  alert("Error: " + error);
+  }})}, 2000);
+    this.showBasicTable = false;
+    this.showFilteredTable = true;
   }
 }

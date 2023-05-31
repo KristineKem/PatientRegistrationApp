@@ -33,6 +33,6 @@ export class PatientService {
   }
 
   getByDoctorName(doctor: any): Observable<any[]>{
-    return this.http.get<any>(this.apiUrl + '/getPatientsByDoctor/' + doctor);
+    return this.http.get<any[]>(this.apiUrl + '/getPatientsByDoctor/' + doctor);
   }
 }

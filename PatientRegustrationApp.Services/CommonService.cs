@@ -1,7 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PatientRegistrationApp.Core.Services;
+﻿using PatientRegistrationApp.Core.Services;
 using PatientRegistrationApp.Data;
-using PatientRegistrationApp.Core.Models;
 
 namespace PatientRegistrationApp.Services
 {

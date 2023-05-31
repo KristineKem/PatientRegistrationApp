@@ -5,7 +5,7 @@
 <div class="tab" *ngIf="showFilter">
   <form>
     <div class="mt-3 position-relative">
-      <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Enter doctor's name:</label>
+      <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label"></label>
       <div class="col-xs-3 col-sm-auto">
         <input id="table-filtering-search" class="form-control" type="text" [(ngModel)]="inputText" name="toFilter" (input)="filterTable()" placeholder="Enter doctor's name"/>
       </div>
@@ -13,8 +13,8 @@
   </form>
   
   <table class="table table-striped" *ngIf="showBasicTable">
-    <thead>
-      <tr>
+    <thead class="table-head">
+      <tr class="table-tr">
         <th scope="col">#</th>
 			  <th scope="col">Patient Name</th>
 			  <th scope="col">Patient Code</th>
@@ -39,7 +39,7 @@
 <div>
   <table class="table table-striped" *ngIf="showFilteredTable">
     <thead>
-      <tr *ngFor="let patient of filteredList">
+      <tr>
         <th scope="col">#</th>
 			  <th scope="col">Patient Name</th>
 			  <th scope="col">Patient Code</th>
@@ -48,7 +48,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let patient of patientsList">
+      <tr *ngFor="let patient of filteredList">
         <td>{{patient.id}}</td>
         <td>{{patient.name}}</td>
         <td>{{patient.code}}</td>
