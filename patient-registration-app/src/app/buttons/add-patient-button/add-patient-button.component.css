@@ -1,0 +1,15 @@
+.modal-header {
+    background-image: url('/assets/background2.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.modal-title {
+    color:antiquewhite;
+}
+
+.modal-body {
+    background-image: url('/src/assets/modal_back.jpg');
+    background-position: center;
+    background-size: cover;
+}

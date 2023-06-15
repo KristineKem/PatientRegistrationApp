@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\PatientRegistrationApp",
+    "\\PatientRegistrationApp\\Controllers",
+    "\\PatientRegistrationApp\\Models",
+    "\\PatientRegustrationApp.Services"
+  ],
+  "SelectedNode": "\\PatientRegustrationApp.Services\\PatientService.cs",
+  "PreviewInSolutionExplorer": false
+}

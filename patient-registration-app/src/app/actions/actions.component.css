@@ -3,6 +3,7 @@ nav {
     color: #fff;
     margin: 10px;
     border-radius: 5px;
+    
   }
   
   ul {
@@ -11,6 +12,7 @@ nav {
     padding: 0;
     display: flex;
     justify-content: center;
+    rotate: (90deg);
   }
   
   li {

@@ -5,10 +5,16 @@
 .table {
 
 .table-head{
-    margin: 20px;  
+    margin: 20px; 
+    color:antiquewhite;
 }
 
 .table-tr{
     justify-content: center;
+    color:antiquewhite;
+} 
 }
+
+.table-td {
+    color:antiquewhite;
 }

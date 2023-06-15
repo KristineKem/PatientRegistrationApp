@@ -18,4 +18,7 @@ const routes: Routes = [
   styleUrls: ['./actions.component.css']
 })
 
-export class ActionsComponent {}
+export class ActionsComponent {
+
+  
+}
